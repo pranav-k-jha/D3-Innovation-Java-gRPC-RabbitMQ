@@ -30,6 +30,7 @@ import proto.EduCostStatServiceGrpc;
 public class EduCostStatServer {
 	private final int port;
 	private final Server server;
+	public static final int PORT = 50051;
 
 	public EduCostStatServer(int port) throws IOException {
 		this(ServerBuilder.forPort(port), port);
@@ -68,7 +69,6 @@ public class EduCostStatServer {
 		server.start();
 		server.blockUntilShutdown();
 	}
-	
 
 	static class EduCostStatServiceImpl extends EduCostStatServiceGrpc.EduCostStatServiceImplBase {
 		@Override
@@ -76,8 +76,8 @@ public class EduCostStatServer {
 			double totalExpense = QueryOneDAO.query(request.getYear(), request.getState(), request.getType(),
 					request.getLength(), request.getExpense());
 			String queryId = UUID.randomUUID().toString();
-			QueryOneResponse response = QueryOneResponse.newBuilder().setQueryId(queryId).setTotalExpense((int) totalExpense)
-					.build();
+			QueryOneResponse response = QueryOneResponse.newBuilder().setQueryId(queryId)
+					.setTotalExpense((int) totalExpense).build();
 			responseObserver.onNext(response);
 			responseObserver.onCompleted();
 		}
@@ -106,17 +106,24 @@ public class EduCostStatServer {
 			List<Document> economicStates = QueryThreeDAO.query(request.getYear(), request.getType(),
 					request.getLength());
 
-			// Build the response using the list of documents
-			QueryThreeResponse.Builder responseBuilder = QueryThreeResponse.newBuilder();
-			for (Document doc : economicStates) {
-				String state = doc.getString("_id");
-				int total = doc.getInteger("total");
-				EconomicState economicState = EconomicState.newBuilder().setState(state).setTotal(total).build();
-				responseBuilder.addEconomicStates(economicState);
-			}
-			QueryThreeResponse response = responseBuilder.build();
+			// Check if the economicStates list is not empty
+			if (economicStates != null && !economicStates.isEmpty()) {
+				// Build the response using the list of documents
+				QueryThreeResponse.Builder responseBuilder = QueryThreeResponse.newBuilder();
+				for (Document doc : economicStates) {
+					String state = doc.getString("_id");
+					int total = doc.getInteger("total");
+					EconomicState economicState = EconomicState.newBuilder().setState(state).setTotal(total).build();
+					responseBuilder.addEconomicStates(economicState);
+				}
+				QueryThreeResponse response = responseBuilder.build();
 
-			responseObserver.onNext(response);
+				responseObserver.onNext(response);
+			} else {
+				// Handle the case when there's no data found for the given query
+				responseObserver.onError(new RuntimeException("No data found for the given query."));
+			}
+
 			responseObserver.onCompleted();
 		}
 

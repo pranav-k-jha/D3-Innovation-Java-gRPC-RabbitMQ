@@ -136,32 +136,32 @@ public class EduCostStatClient {
 		EduCostStatClient client = new EduCostStatClient("localhost", 50051);
 		try {
 			int year = 2018;
-			String state = "Ohio";
-			String type = "Public In-State";
+			String state = "Arizona";
+			String type = "Private";
 			String length = "4-year";
 			String expense = "Fees/Tuition";
 			client.queryOne(year, state, type, length, expense);
 
+//			year = 2013;
+//			type = "Private";
+//			length = "4-year";
+//			client.queryTwo(year, type, length);
+//
 			year = 2015;
-			type = "Private";
-			length = "4-year";
-			client.queryTwo(year, type, length);
-
-			year = 2014;
 			type = "Public Out-of-State";
 			length = "4-year";
 			client.queryThree(year, type, length);
-
-			int baseYear = 2021;
-			int yearsAgo = 5;
-			type = "Private";
-			length = "4-year";
-			client.queryFour(baseYear, yearsAgo, type, length);
-
-			year = 2021;
-			type = "Public In-State";
-			length = "4-year";
-			client.queryFive(year, type, length);
+//
+//			int baseYear = 2021;
+//			int yearsAgo = 5;
+//			type = "Private";
+//			length = "4-year";
+//			client.queryFour(baseYear, yearsAgo, type, length);
+////
+//			year = 2021;
+//			type = "Public In-State";
+//			length = "4-year";
+//			client.queryFive(year, type, length);
 		} finally {
 			client.shutdown();
 		}
