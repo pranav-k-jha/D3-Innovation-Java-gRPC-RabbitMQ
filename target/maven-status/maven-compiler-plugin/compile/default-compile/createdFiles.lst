@@ -1,5 +1,4 @@
 proto\EduCostStat$ExpensiveStateOrBuilder.class
-org\concordia\GRPCClient\EduCostStatClient$1.class
 org\concordia\DAO\QueryOneDAO.class
 proto\EduCostStat$QueryFiveResponseOrBuilder.class
 proto\EduCostStat$QueryFourResponse$StateGrowthRate$Builder.class
@@ -28,7 +27,6 @@ proto\EduCostStat$QueryThreeResponseOrBuilder.class
 proto\EduCostStat$QueryFourResponse$StateGrowthRateOrBuilder.class
 proto\EduCostStat$QueryFourRequest$Builder.class
 proto\EduCostStat$QueryThreeResponse$Builder.class
-org\concordia\GRPCClient\EduCostStatClient.class
 proto\EduCostStat$EconomicState$Builder.class
 proto\EduCostStat$QueryOneResponse$1.class
 proto\EduCostStat$QueryThreeResponse$1.class
@@ -42,6 +40,7 @@ proto\EduCostStat$ExpensiveState$1.class
 proto\EduCostStat$QueryFourResponse$StateGrowthRate.class
 proto\EduCostStatServiceGrpc$MethodHandlers.class
 org\concordia\DAO\QueryFiveDAO.class
+org\concordia\RabbitMQ\RabbitMQProducer.class
 proto\EduCostStat$QueryOneResponse$Builder.class
 proto\EduCostStat$QueryOneResponse.class
 proto\EduCostStat$QueryTwoRequestOrBuilder.class
@@ -65,6 +64,7 @@ proto\EduCostStat$QueryOneRequest$1.class
 proto\EduCostStat.class
 proto\EduCostStat$QueryFiveRequest$1.class
 proto\EduCostStat$QueryFiveResponse$RegionCost.class
+org\concordia\RabbitMQ\RabbitMQProducerQueryTwo.class
 proto\EduCostStat$QueryOneRequest$Builder.class
 proto\EduCostStat$1.class
 proto\EduCostStatServiceGrpc$EduCostStatServiceStub.class
