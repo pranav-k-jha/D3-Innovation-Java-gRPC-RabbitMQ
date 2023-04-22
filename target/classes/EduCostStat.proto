@@ -1,0 +1,109 @@
+// Specify that the syntax used in the file is proto3
+syntax = "proto3";
+
+// Define the package for the messages and service
+package proto;
+
+// EduCostStatService provides methods for querying education cost statistics.
+service EduCostStatService {
+// Define the QueryOne method request and response messages
+	rpc QueryOne (QueryOneRequest) returns (QueryOneResponse);
+	// Define the QueryTwo method request and response messages
+	rpc QueryTwo (QueryTwoRequest) returns (QueryTwoResponse);
+
+	// Define the QueryThree method request and response messages
+	rpc QueryThree (QueryThreeRequest) returns (QueryThreeResponse);
+
+	// Define the QueryFour method request and response messages
+	rpc QueryFour (QueryFourRequest) returns (QueryFourResponse);
+
+	// Define the QueryFive method request and response messages
+	rpc QueryFive (QueryFiveRequest) returns (QueryFiveResponse);
+}
+
+// Define the QueryOneRequest message
+message QueryOneRequest {
+	int32 year = 1; // The year for the query
+	string state = 2; // The state for the query
+	string type = 3; // The type of institution for the query
+	string length = 4; // The length of the program for the query
+	string expense = 5; // The expense value for the query
+}
+
+// Define the QueryOneResponse message
+message QueryOneResponse {
+	string queryId = 1; // The identifier for the query result
+	int32 totalExpense = 2; // The total expense for the query
+}
+
+// Define the QueryTwoRequest message
+message QueryTwoRequest {
+	int32 year = 1; // The year for the query
+	string type = 2; // The type of institution for the query
+	string length = 3; // The length of the program for the query
+}
+
+// Define the ExpensiveState message to represent the expense for a state
+message ExpensiveState {
+	string state = 1; // The state name
+	int32 total = 2; // The total expense for the state
+}
+
+// Define the QueryTwoResponse message
+message QueryTwoResponse {
+	repeated ExpensiveState expensiveStates = 1; // The list of expensive states
+}
+
+// Define the QueryThreeRequest message
+message QueryThreeRequest {
+	int32 year = 1; // The year for the query
+	string type = 2; // The type of institution for the query
+	string length = 3; // The length of the program for the query
+}
+
+// Define the EconomicState message to represent the expense for a state
+message EconomicState {
+	string state = 1; // The state name
+	int32 total = 2; // The total expense for the state
+}
+
+// Define the QueryThreeResponse message
+message QueryThreeResponse {
+	repeated EconomicState economicStates = 1; // The list of economic states
+}
+
+// Define the QueryFourRequest message
+message QueryFourRequest {
+	int32 baseYear = 1; // The base year for the query
+	int32 yearsAgo = 2; // The number of years ago for the query
+	string type = 3; // The type of institution for the query
+	string length = 4; // The length of the program for the query
+}
+
+// Define the QueryFourResponse message
+message QueryFourResponse {
+	string queryId = 1; // The identifier for the query result
+	// Define the StateGrowthRate message to represent the growth rate of a state
+	repeated StateGrowthRate stateGrowthRates = 2; // The list of state growth rates
+	message StateGrowthRate {
+		string state = 1; // The state name
+		double growthRate = 2; // The growth rate of the state
+	}
+
+}
+// Define the QueryFiveRequest message
+message QueryFiveRequest {
+	int32 year = 1; // The year for the query
+	string type = 2; // The type of institution for the query
+	string length = 3; // The length of the program for the query
+}
+// Define the QueryFiveResponse message
+message QueryFiveResponse {
+	string queryId = 1; // The identifier for the query result
+	repeated RegionCost regionCosts = 2; // The list of region costs
+	message RegionCost {
+		string region = 1; // The region name
+		double cost = 2; // The average cost for the region
+	}
+
+}
