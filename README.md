@@ -1,5 +1,5 @@
 # Edu-Analytics
-A Distributed System with gRPC, MongoDB NoSQL Database, RabbitMQ, and Message-Driven Data Processing
+A DISTRIBUTED SYSTEM BASED ON A MICROSERVICE ARCHITECTURE UTILIZES GRPC AND EMPLOYS MESSAGE-DRIVEN DATA PROCESSING.
 
 Brief Description of the Project  This project has the purpose of practicing (1) RPC communication for resources and services; (2) data operations on MongoDB, a NoSQL database; (3) implementation of aggregation pipelines for data processing. A public data source is available on Kaggle. It is compiled from the National Center of Education Statistics Annual Digest, USA. The data contains the statistics of average undergraduate tuition and fees and room and board rates charged for full-time students in degree-granting postsecondary institutions. 
 
