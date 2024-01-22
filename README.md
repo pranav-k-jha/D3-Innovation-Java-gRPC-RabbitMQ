@@ -1,7 +1,7 @@
 # Edu-Analytics
 A DISTRIBUTED SYSTEM BASED ON A MICROSERVICE ARCHITECTURE UTILIZES GRPC AND EMPLOYS MESSAGE-DRIVEN DATA PROCESSING.
 
-Brief Description of the Project  This project has the purpose of practicing (1) RPC communication for resources and services; (2) data operations on MongoDB, a NoSQL database; (3) implementation of aggregation pipelines for data processing. A public data source is available on Kaggle. It is compiled from the National Center of Education Statistics Annual Digest, USA. The data contains the statistics of average undergraduate tuition and fees and room and board rates charged for full-time students in degree-granting postsecondary institutions. 
+Brief Description of the Project  This project has the purpose of practicing (1) RPC communication for resources and services; (2) data operations on MongoDB, a NoSQL database; and (3) implementation of aggregation pipelines for data processing. A public data source is available on Kaggle. It is compiled from the National Center of Education Statistics Annual Digest, USA. The data contains the statistics of average undergraduate tuition and fees and room and board rates charged for full-time students in degree-granting postsecondary institutions. 
 
 https://www.kaggle.com/datasets/kfoster150/avg-cost-of-undergrad-college-bystate/versions/10?resource=download
 
@@ -13,7 +13,7 @@ Task 1.2 is to develop data access objects in Java that represent different quer
 1) Query the cost given specific year, state, type, length, and expense; and save the query as a document in a collection named EduCostStatQueryOne. 
 2) Query the top 5 most expensive states (with overall expense) given a year, type, and length; and save the query as a document in a collection named EduCostStatQueryTwo. 
 3) Query the top 5 most economic states (with the overall expense) given a year, type, and length; and save the query as a document in a collection named EduCostStatQueryThree. 
-4) Query the top 5 states with the highest growth rate of overall expense given a range of past years, one year, three years, and five years (using the latest year as the base) , type and length; and save the query as a document in a collection named EduCostStatQueryFour. 
+4) Query the top 5 states with the highest growth rate of overall expense given a range of past years, one year, three years, and five years (using the latest year as the base), type, and length; and save the query as a document in a collection named EduCostStatQueryFour. 
 
 5) Aggregate the region‘s average overall expense for a given year, type, and length; and save the query as a document in a collection named EduCostStatQueryFive. The region’s map can be found here. https://education.nationalgeographic.org/resource/united-states-regions/ (you can search the keywords “Five US Region Map” to find our text-based mapping) (10 marks) 
 
