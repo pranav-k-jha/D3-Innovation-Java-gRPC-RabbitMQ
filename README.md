@@ -1,7 +1,8 @@
 # Edu-Analytics
 A DISTRIBUTED SYSTEM BASED ON A MICROSERVICE ARCHITECTURE UTILIZES GRPC AND EMPLOYS MESSAGE-DRIVEN DATA PROCESSING.
 
-Brief Description of the Project  This project has the purpose of practicing (1) RPC communication for resources and services; (2) data operations on MongoDB, a NoSQL database; and (3) implementation of aggregation pipelines for data processing. A public data source is available on Kaggle. It is compiled from the National Center of Education Statistics Annual Digest, USA. The data contains the statistics of average undergraduate tuition and fees and room and board rates charged for full-time students in degree-granting postsecondary institutions. 
+## Brief Description of the Project  
+This project has the purpose of practicing (1) RPC communication for resources and services; (2) data operations on MongoDB, a NoSQL database; and (3) implementation of aggregation pipelines for data processing. A public data source is available on Kaggle. It is compiled from the National Center of Education Statistics Annual Digest, USA. The data contains the statistics of average undergraduate tuition and fees and room and board rates charged for full-time students in degree-granting postsecondary institutions. 
 
 https://www.kaggle.com/datasets/kfoster150/avg-cost-of-undergrad-college-bystate/versions/10?resource=download
 
